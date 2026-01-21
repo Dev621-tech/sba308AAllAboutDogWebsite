@@ -1,0 +1,17 @@
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+#dogImage1 {
+    width: 750px;
+    height: 500px;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
