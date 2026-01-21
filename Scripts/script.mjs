@@ -3,7 +3,9 @@ const select = document.getElementById("breedSelection");
 
 import { getDogImage } from "./dogImages.mjs";
 
-const breedImage = {};
+const breedData = {};
+const img1 = document.getElementById("dogImage1");
+
 
 async function breedLoad() {
     try {
@@ -22,10 +24,9 @@ async function breedLoad() {
             option.textContent = breed.name;
             select.appendChild(option);
 
+            // console.log(breed.image.url);
 
-            if (breed.reference_image_id) {
-                breedImage[breed.id] = breed.reference_image_id;
-            };
+            breedData[breed.id] = breed;
 
         });
 
@@ -40,27 +41,22 @@ async function breedLoad() {
 
 breedLoad();
 
-const img1 = document.getElementById("dogImage1");
+
 
 select.addEventListener("change", async () => {
     const breedId = select.value;
-    if (!breedId) return;
+    img1.src = breedData[select.value].image.url;
 
 
-    let image = await getDogImage(breedId);
+    // let image = await getDogImage(breedId);
 
-    if (!image || !image.url) {
-        const refId = breedImage[breedId];
-        if (refId) {
-            image = { url: `https://cdn2.thedogapi.com/images/${refId}.jpg` }
-        } else {
-            image = null
-        }
-    }
+    // if (!image || !image.url) {
+    //     const refId = breedImage[breedId];
+    //     if (refId) {
+    //         image = { url: `https://cdn2.thedogapi.com/images/${refId}.jpg` }
+    //     } else {
+    //         image = null
+    //     }
+    // }
 
-    if (image) {
-        img1.src = image.url
-    } else {
-        return
-    }
 });
