@@ -52,13 +52,8 @@ select.addEventListener("change", async () => {
     document.getElementById("breedHistory").textContent = `History: ${breedData[select.value].history}`;
     document.getElementById("breedLifeSpan").textContent =`Life Span: ${breedData[select.value].life_span} years`;
     document.getElementById("breedOrigin").textContent = `Origin: ${breedData[select.value].origin}`;
-
-
-
-
-
-
     document.getElementById("breedTemperament").textContent = `Temperament: ${breedData[select.value].temperament}`;
+    document.getElementById("breedWeight").textContent = `Weight: ${breedData[select.value].weight.imperial} lbs`;
 
 
 });
