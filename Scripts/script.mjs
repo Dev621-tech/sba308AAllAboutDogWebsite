@@ -1,5 +1,5 @@
 let title = document.getElementsByTagName('header');
-title[0].style.backgroundColor = 'red';
+title[0].style.backgroundColor = 'cadetblue';
 let websiteTitle = document.createElement('h1');
 websiteTitle.textContent = `ALL ABOUT DOGS`;
 title[0].append(websiteTitle);
