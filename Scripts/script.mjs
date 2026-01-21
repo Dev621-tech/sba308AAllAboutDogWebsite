@@ -1,3 +1,15 @@
+let title = document.getElementsByTagName('header');
+title[0].style.backgroundColor = 'red';
+let websiteTitle = document.createElement('h1');
+websiteTitle.textContent = `ALL ABOUT DOGS`;
+title[0].append(websiteTitle);
+
+websiteTitle.style.margin = '0';
+websiteTitle.style.fontSize = "5rem";
+websiteTitle.style.fontFamily = "'Courier New', monospace";
+
+
+
 const apiKey = "live_MVGZ1KLNEm7dwh9VsCdArSsMC8j5wy4ekYgQrwRSinvYQXfrOZdCD8jtWiOOhzrT"
 const select = document.getElementById("breedSelection");
 
