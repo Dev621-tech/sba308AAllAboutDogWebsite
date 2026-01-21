@@ -9,10 +9,6 @@ export async function getDogImage(breedId) {
 
     const data = await response.json();
 
-    if (data && data[0] && data[0].url){
-        return data[0];
-    } else {
-        return null;
-    }
+ 
     
 };

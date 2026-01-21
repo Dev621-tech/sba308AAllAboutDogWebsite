@@ -16,7 +16,7 @@ async function breedLoad() {
         });
 
         let breeds = await response.json();
-        // console.log(breeds);
+        console.log(breeds);
 
         breeds.forEach(breed => {
             const option = document.createElement("option");
@@ -24,7 +24,7 @@ async function breedLoad() {
             option.textContent = breed.name;
             select.appendChild(option);
 
-            // console.log(breed.image.url);
+            
 
             breedData[breed.id] = breed;
 
@@ -47,16 +47,18 @@ select.addEventListener("change", async () => {
     const breedId = select.value;
     img1.src = breedData[select.value].image.url;
 
+    document.getElementById("breedName").textContent = breedData[select.value].name;
+    document.getElementById("breedDescription").textContent = breedData[select.value].description;
+    document.getElementById("breedHistory").textContent = `History: ${breedData[select.value].history}`;
+    document.getElementById("breedLifeSpan").textContent =`Life Span: ${breedData[select.value].life_span} years`;
+    document.getElementById("breedOrigin").textContent = `Origin: ${breedData[select.value].origin}`;
 
-    // let image = await getDogImage(breedId);
 
-    // if (!image || !image.url) {
-    //     const refId = breedImage[breedId];
-    //     if (refId) {
-    //         image = { url: `https://cdn2.thedogapi.com/images/${refId}.jpg` }
-    //     } else {
-    //         image = null
-    //     }
-    // }
+
+
+
+
+    document.getElementById("breedTemperament").textContent = `Temperament: ${breedData[select.value].temperament}`;
+
 
 });
